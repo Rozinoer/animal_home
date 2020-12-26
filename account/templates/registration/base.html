@@ -16,47 +16,49 @@
             <div class="announcement__close"></div>
         </div>
         <div class="header-wrapper">
-		<header>
-			<div class="header__topSegment">
-				<div class="header__left">
-					<!-- <div class="header__left__logo"></div>
-					<div class="header__left__buttons">
-						<div class="header__left__buttons__ourPets"></div>
-						<div class="header__left__buttons__contacts"></div>
-					</div>
-			 -->
-				</div>
-				<div class="header__center">
-					<div class="header__center__logo"></div>
-				</div>
-				<div class="header__right">
-					<div class="header__right__buttons">
-						<div class="header__right__buttons__autorization"><a href="{% url 'account:account' %}">ff</a></div>
-						<div class="header__right__buttons__databaseEditing"></div>
-					</div>
+            <header>
+                <div class="header__topSegment">
+                    <div class="header__left">
+                        <!-- <div class="header__left__logo"></div>
+                        <div class="header__left__buttons">
+                            <div class="header__left__buttons__ourPets"></div>
+                            <div class="header__left__buttons__contacts"></div>
+                        </div>
+                 -->
+                    </div>
+                    <div class="header__center">
+                        <div class="header__center__logo"></div>
+                    </div>
+                    <div class="header__right">
+                        <div class="header__right__buttons">
+                            <div class="header__right__buttons__autorization"><a href="{% url 'account:account' %}">ff</a></div>
+                            <div class="header__right__buttons__databaseEditing"></div>
+                        </div>
 
-				</div>
-			</div>
-			<div class="header__bottomSegment">-->
-                <ul class="header__bottomSegment__nav">
-                    <a href="{% url 'shelter:index' %}"><li class="header__bottomSegment__nav__item">Главная</li></a>
-                    <a href="{% url 'shelter:search_page' %}"><li class="header__bottomSegment__nav__item">Выбрать питомца</li></a>
-                    <li class="header__bottomSegment__nav__item">Контакты</li>
-                    <li class="header__bottomSegment__nav__item">О нас</li>
-                    {% if request.user.is_authenticated %}
-                    <a href="{% url 'account:dashboard' %}">Hello {{ request.user.username }},
-                    <a href="{% url 'account:logout' %}" ><li class="header__bottomSegment__nav__item">Выход</li></a>
-                    {% else %}
-                    <a href="{% url 'account:login' %}"><li class="header__bottomSegment__nav__item">Вход</li></a>
-                    {% endif %}
-                    </a>
-                </ul>
-            </div>
-		</header>
-	</div>
+                    </div>
+                </div>
+                <div class="header__bottomSegment">-->
+                    <ul class="header__bottomSegment__nav">
+                        <a href="{% url 'shelter:index' %}"><li class="header__bottomSegment__nav__item">Главная</li></a>
+                        <a href="{% url 'shelter:search_page' %}"><li class="header__bottomSegment__nav__item">Выбрать питомца</li></a>
+                        <li class="header__bottomSegment__nav__item">Контакты</li>
+                        <li class="header__bottomSegment__nav__item">О нас</li>
+                        {% if request.user.is_authenticated %}
+                        <a href="{% url 'account:dashboard' %}">Hello {{ request.user.username }},
+                        <a href="{% url 'account:logout' %}" ><li class="header__bottomSegment__nav__item">Выход</li></a>
+                        {% else %}
+                        <a href="{% url 'account:login' %}"><li class="header__bottomSegment__nav__item">Вход</li></a>
+                        {% endif %}
+                        </a>
+                    </ul>
+                </div>
+            </header>
+        </div>
+        <content>
             {% block content %}
             {% endblock %}
-        </div>
+        </content>
+    </div>
 
 	<footer>
 		<p>Все права защищены ©2020</p>

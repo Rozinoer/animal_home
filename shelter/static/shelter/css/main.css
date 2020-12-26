@@ -219,6 +219,10 @@ content{
 .section__0 p{
 	font-size: 23px;
 }
+span a{
+    color: white;
+    text-decoration: none;
+}
 .section__ourPets{
 	display: flex;
 	flex-direction: column;

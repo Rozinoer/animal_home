@@ -4,12 +4,14 @@
 {% block menu %}{% endblock %}
 {% block content %}
     <h1>Добавить приют</h1>
-    <p>Please, sign up using the following form:</p>
- <div class="form-group">
-    <form action="." method="post">
-        {{ shelter_form.as_p }}
-        {% csrf_token %}
-        <p><input type="submit" value="Add animal" id="autorization__submitButton"></p>
-    </form>
- </div>
+    <p>Для добавления приюта воспользуйтесьб этой формой:</p>
+    <div class="autorizationForm">
+         <div class="form-group">
+            <form action="." method="post">
+                {{ shelter_form.as_p }}
+                {% csrf_token %}
+                <p><input type="submit" value="Добавить приют" id="autorization__submitButton"></p>
+            </form>
+         </div>
+    </div>
 {% endblock %}

@@ -1,0 +1,13 @@
+{% extends "./base.html" %}
+
+{% block title %}Добавление питомца{% endblock %}
+
+{% block content %}
+{% if flag==0 %}
+    <h1>Приют добавлен!</h1>
+    <p>Вернутсья на свою <a href="{% url 'account:account' %}">страницу</a>.</p>
+{% else %}
+    <h1>При добавлении приюта произошла ошибка!</h1>
+    <p>Приют уже существует.Вернутсья на свою <a href="{% url 'account:account' %}">страницу</a>.</p>
+{% endif %}
+{% endblock %}

@@ -4,9 +4,11 @@
 {% block content %}
     <h1>Редактирование данных о приюте</h1>
     <p>You can edit your account using the following form:</p>
+<div class="autorizationForm">
     <form action="." method="post" enctype="multipart/form-data">
         {{ shelter_form.as_p }}
         {% csrf_token %}
         <p><input type="submit" value="Save changes"></p>
     </form>
+</div>
 {% endblock %}

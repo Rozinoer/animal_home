@@ -1,21 +1,21 @@
 {% extends "./base.html" %}
 {% block title %}Log-in{% endblock %}
 {% block content %}
-    <h1>Log-in</h1>
+    <h1>Вход</h1>
     {% if form.errors %}
         <p>
-            Your username and password didn't match.
-            Please try again.
+            Имя пользователя или пароль введены неверно.
+            Попробуйте еще раз!
         </p>
     {% else %}
-        <p>Please, use the following form to log-in. If you don't have an account <a href="{% url 'account:register' %}">register here</a></p>
+        <p>Пожалуйсиа, используйте эту форму для авторизации. Если вы не зарегистрированы, это можно сделать <a href="{% url 'account:register' %}">здесь</a></p>
     {% endif %}
-    <div class="form-group">
+    <div class="autorizationForm">
         <form action="{% url 'account:login' %}" method="post">
             {{ form.as_p }}
             {% csrf_token %}
             <input type="hidden" name="next" value="{{ next }}"/>
-            <p><input type="submit"  id="autorization__submitButton" value="Log-in"></p>
+            <p><input type="submit"  id="autorization__submitButton" value="Войти"></p>
         </form>
     </div>
 {% endblock %}

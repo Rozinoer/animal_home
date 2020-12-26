@@ -128,17 +128,26 @@ def register_animal(request):
 
 @login_required
 def register_shelter(request):
+    flag = 0
     if request.method == 'POST':
-        shelter_form = ShelterRegistrationForm(request.POST)
-        if shelter_form.is_valid():
-            # Create a new user object but avoid saving it yet
-            new_shelter = shelter_form.save(commit=False)
-            new_shelter.user = request.user
-            # Set the chosen password
-            # Save the User object
-            new_shelter.save()
-            # profile = Animal.objects.create(user=new_animal)
-            return render(request, 'account/register_animal_done.html')
+        if Shelter.objects.filter(user=request.user).first():
+            flag = 1
+            return render(request, 'account/register_shelter_done.html', {'flag': flag})
+        else:
+            shelter_form = ShelterRegistrationForm(request.POST)
+            if shelter_form.is_valid():
+                # Create a new user object but avoid saving it yet
+                new_shelter = shelter_form.save(commit=False)
+                new_shelter.user = request.user
+                # Set the chosen password
+                # Save the User object
+                new_shelter.save()
+                # profile = Animal.objects.create(user=new_animal)
+                return render(request, 'account/register_shelter_done.html', {'flag': flag})
     else:
         shelter_form = ShelterRegistrationForm()
     return render(request, 'account/add_shelter.html', {'shelter_form': shelter_form})
+
+
+def page(request):
+    return render()

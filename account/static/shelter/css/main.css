@@ -188,6 +188,10 @@ header{
 	animation: pulse 3s infinite;
 	opacity: 1;
 }
+a{
+    color: white;
+    text-decoration: none;
+}
 .header__right__buttons__databaseEditing{
 	width: 30%;
 	height: 100%;

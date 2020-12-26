@@ -164,9 +164,11 @@
 									{% else %}
 										<h2>{{ animal.animal_name }}</h2>
 									{% endif %}
-									<p>{{ animal.animal_card }}</p>
+									<span>Цвет: {{ animal.animal_color }}</span>
+									<span>Размер: {{ animal.animal_size }}</span>
+									<span>Представитель: <a href="{% url 'account:page' %}">{{ animal.user_id }}</a></span>
 								</div>
-								<div class="petcards__item__likeButton"></div>
+								<div class="petcards__item__likeButton" style="color: #fff"></div>
 							</div>
 							{% endfor %}
 							{% endif %}
