@@ -1,0 +1,63 @@
+.pet_type,
+.pet_gender{
+	 
+
+}
+
+select{
+	border-radius: 2px;
+	border: 2px solid #d0d0d0;
+
+	min-width: 220px;
+	height: 36px;
+}
+select:hover{
+	border-bottom: 1px solid #c22;
+}
+
+.registry-petCard__cols__col2__item,
+.registry-petCard__cols__col3__item{
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+}
+
+
+.registry-petCard__cols{
+	margin: 0 auto;
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: space-between;
+	/*width:  35%;*/
+}
+
+.registry-petCard{
+
+}
+
+.searchForm__buttons{
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+	width: 150px;
+	color: #fff;
+	user-select: none;
+}
+
+.searchForm__buttons__button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 90px;
+	height: 45px;
+	background-color: #c22;
+	/*border-top: 2px solid #f23;
+	border-left: 1px solid #f23;*/
+	border-radius: 2px;
+	
+}
+.searchForm__buttons__button:hover{
+	background-color: #f12;
+}

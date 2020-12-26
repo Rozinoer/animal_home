@@ -1,0 +1,68 @@
+{% extends './base.html' %}
+{% block content %}
+
+	<div class="overlay">
+		<div class="slides">
+		  	<div class="slide 1th">
+		  		<div class="slide__text">Text</div>
+		  	</div>
+		  	<div class="slide 2th">
+		  		<div class="slide__text">Text 2</div>
+		  	</div>
+		 	 <div class="slide 3th">
+		  		<div class="slide__text"></div>
+		  	</div>
+		  	<div class="slide 4th">
+		  		<div class="slide__text"></div>
+		  	</div>
+		  	<div class="slide 5th">
+		  		<div class="slide__text"></div>
+		  	</div>
+		</div>
+		<div class="nav">
+		  	<div class="btn-group">
+				<div class="btn active"></div>
+				<div class="btn"></div>
+				<div class="btn"></div>
+				<div class="btn"></div>
+				<div class="btn"></div>
+		  	</div>
+		</div>
+	</div>
+
+	<content>
+		<div class="section__0">
+			<h2>Title</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+
+<!--		<div class="section__ourPets">-->
+			<h2>Наши питомцы</h2>
+			<div class="section__ourPets__petcards">
+				<div class="section__ourPets__petcards__wrapper">
+					{% if animal_list %}
+						{% for animal in animal_list %}
+						<div class="petcards__item">
+							<div class="petcards__item__img"></div>
+							<div class="petcards__item__description">
+								{% if animal.animal_name == None  %}
+									<h2>Прикол</h2>
+								{% else %}
+									<h2>{{ animal.animal_name }}</h2>
+								{% endif %}
+								<p>{{ animal.animal_card }}</p>
+							</div>
+							<div class="petcards__item__likeButton"></div>
+						</div>
+						{% endfor %}
+						{% endif %}
+				</div>
+			</div>
+<!--		</div>-->
+	</content>
+{% endblock %}

@@ -1,0 +1,8 @@
+.registry-petCard__cols{
+	margin: 0;
+	display: flex;
+
+	flex-wrap: wrap;
+	max-width: 950px;
+
+}

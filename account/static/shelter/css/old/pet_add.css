@@ -1,0 +1,32 @@
+.registry-petCard__item,
+.registry-petCard__cols__col2__item,
+.registry-petCard__cols__col3__item{
+	display: flex;
+	flex-direction: column;
+}
+
+input{
+	height: 36px;
+	margin-bottom: 20px;
+	max-width: 500px;
+	border-radius: 2px;
+}
+
+.registry-petCard__cols{
+	margin: 0;
+	display: flex;
+
+	flex-wrap: wrap;
+	max-width: 950px;
+
+}
+
+.registry-petCard__photo{
+	width: 400px;
+	height: 400px;
+	background-color: #337ab7;
+}
+
+input{
+	border: 2px solid #d0d0d0;
+}

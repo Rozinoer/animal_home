@@ -1,0 +1,67 @@
+.registrationForm{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 700px;
+
+	margin: 50px 0;
+	padding: 10px;
+	/*background-color: #fff;
+	*/
+
+}
+
+.registrationForm label{
+	font-size: 17px;
+	color: rgb(70,70,70);
+	align-self: flex-start;
+	margin-bottom: 10px;
+	margin-left: 15%;
+}
+
+.registrationForm input{
+	box-sizing: border-box;
+	font-size: 17px;
+	display: block;
+	margin-bottom: 30px;
+	padding: 0 10px;
+	width: 70%;
+	height: 40px;
+	border: 1px solid #FFAE40;
+	background: transparent;
+	outline: none;
+	color: inherit;
+	transition: .3s;
+
+
+}
+
+.registrationForm input:focus{
+	border: transparent;
+	border: 1px solid black;
+	
+}
+.registrationForm input:active{
+
+}
+
+#registration__submitButton{
+	cursor: pointer;
+	margin: 0;
+	background-color: rgb(20,25,20);
+	border: none;
+	font-size: 21px;
+	color: #fff;
+}
+
+.registrationForm__createAccount{
+	cursor: pointer;
+	color: rgb(70,70,70);
+	align-self: flex-start;
+	margin-top: 30px;
+
+	margin-left: 15%;
+	font-size: 17px;
+	transition: .3s;
+}
+

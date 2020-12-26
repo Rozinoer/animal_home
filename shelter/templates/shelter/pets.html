@@ -1,0 +1,178 @@
+{% extends './base.html' %}
+{% block content %}
+		<content>
+			<div class="section__petSearch">
+				<h2>Найти друга</h2>
+				<div class="searchForm">
+					<form name="search_form" action="{% url 'shelter:search_filter' %}" method="POST">{% csrf_token %}
+						<div class="registry-petCard">
+
+							<div class="registry-petCard__cols">
+
+								<div class="registry-petCard__cols__col2">
+									<div class="registry-petCard__cols__col2__item">
+										<p>Тип животного </p>
+										<div class="pet_type">
+											<select name="type">
+												<option value='None'>Не выбрано</option>
+												<option value="Собака">Собака</option>
+												<option value="Кошка">Кошка</option>
+											</select>
+										</div>
+									</div>
+									<div class="registry-petCard__cols__col2__item">
+										<p>Пол </p>
+										<div class="pet_gender">
+											<select name="gender">
+												<option value='None'>Не выбрано</option>
+												<option value="Мужской">Мужской</option>
+												<option value="Женский">Женский</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="registry-petCard__cols__col2__item">
+										<p>Окрас </p>
+											<div class="pet_color">
+												<select name="color">
+													{% if color_value %}
+														<option value="{{ color_value }}">{{ color_value }}</option>
+													{% else %}
+														<option value='None'>Не выбрано</option>
+													{% endif %}
+													{% if color_list %}
+														{% for color in color_list %}
+															{% if color.color_value == None %}
+																<option value="{{ color.color_value }}">Не выбрано</option>
+															{% else %}
+																<option value="{{ color.color_value }}">{{ color.color_value }}</option>
+															{% endif %}
+													{% endfor %}
+													{% endif %}
+												</select>
+											</div>
+										</div>
+										<div class="registry-petCard__cols__col2__item">
+											<p>Уши </p>
+											<div class="pet_ears">
+												<select name="ears">
+													<option value='None'>Не выбрано</option>
+													<option value="Стоячие">Стоячие</option>
+													<option value="Полустоячие">Полустоячие</option>
+													<option value="Висячие">Висячие</option>
+													<option value="Купированные">Купированные</option>
+												</select>
+											</div>
+										</div>
+										<div class="registry-petCard__cols__col2__item">
+											<p>Размер </p>
+											<div class="pet_size">
+												<select name="size">
+													<option value='None'>Не выбрано</option>
+													<option value="Средний">Средний</option>
+													<option value="Малый">Малый</option>
+													<option value="Крупный">Крупный</option>
+												</select>
+											</div>
+										</div>
+									</div>
+
+									<div class="registry-petCard__cols__col3">
+										<div class="registry-petCard__cols__col3__item">
+											<p>Возраст, год </p>
+											<div class="pet_age">
+												<select name="age">
+													<option value='None'>Не выбрано</option>
+													<option value="<1"><1</option>
+													<option value="1-5">1-5</option>
+													<option value="5-10">5-10</option>
+													<option value="10<">10<</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="registry-petCard__cols__col3__item">
+											<p>Вес,кг </p>
+											<div class="pet_weight">
+												<select name="weight">
+<!--													{% if weight_value %}-->
+<!--														<option value="{{ weight_value }}">{{ weight_value }}</option>-->
+<!--													{% endif %}-->
+													{% if weight_list %}
+														{% for weight in weight_list %}
+															<option value="{{ weight.weight_value }}">{{ weight.weight_value }}</option>
+														{% endfor %}
+													{% endif %}
+												</select>
+											</div>
+										</div>
+
+										<div class="registry-petCard__cols__col3__item">
+											<p>Порода </p>
+											<div class="pet_breed">
+												<select name="breed">
+													<option value='None'>Не выбрано</option>
+													<option value="Метис">Метис</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="registry-petCard__cols__col3__item">
+											<p>Шерсть </p>
+											<div class="pet_wool">
+												<select name="wool">
+													<option value='None'>Не выбрано</option>
+													<option value="Короткая">Короткая</option>
+													<option value="Обычная">Обычная</option>
+													<option value="Длинная">Длинная</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="registry-petCard__cols__col3__item">
+											<p>Хвост</p>
+											<div class="pet_tail">
+												<select name="tail">
+													<option value='None'>Не выбрано</option>
+													<option value="Обычный">Обычный</option>
+													<option value="Купированный">Купированный</option>
+													<option value="Саблевидный">Саблевидный</option>
+													<option value="Поленом">Поленом</option>
+													<option value="Крючком">Крючком</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							<div class="searchForm__buttons">
+								<button type="submit" class="searchForm__buttons__button" value="Найти">Найти</button>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<div class="searchResult">
+					<div class="section__ourPets__petcards">
+						<div class="section__ourPets__petcards__wrapper">
+							{% if animal_list %}
+							{% for animal in animal_list %}
+							<div class="petcards__item">
+								<div class="petcards__item__img"></div>
+								<div class="petcards__item__description">
+									{% if animal.animal_name == None  %}
+										<h2>Прикол</h2>
+									{% else %}
+										<h2>{{ animal.animal_name }}</h2>
+									{% endif %}
+									<p>{{ animal.animal_card }}</p>
+								</div>
+								<div class="petcards__item__likeButton"></div>
+							</div>
+							{% endfor %}
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</content>
+{% endblock %}

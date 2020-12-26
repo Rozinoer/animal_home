@@ -1,0 +1,141 @@
+
+
+.pet_type,
+.pet_gender{
+	 
+
+}
+
+select{
+	
+	border-radius: 2px;
+	
+	border:  none;
+	min-width: 220px;
+	height: 36px;
+	border: 1px solid #FFAE40;
+	outline: none;
+	color: inherit;
+	background-color: transparent;
+	transition: .3s;
+	
+}
+select:focus,
+select:active{
+
+	border: 1px solid black;
+	
+}
+
+
+
+.registry-petCard__cols__col2__item,
+.registry-petCard__cols__col3__item{
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+}
+
+
+
+
+.registry-petCard__cols{
+	margin: 0 auto;
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: space-between;
+	/*width:  35%;*/
+}
+.registry-petCard__cols p{
+	cursor: default;
+}
+
+.registry-petCard{
+
+}
+
+.registry-petCard__petName{
+	display: flex;
+	flex-direction: column;
+	
+	/*margin: 0 10px;*/
+	width: 330px;
+}
+
+.petAddition__title{
+	margin-bottom: 50px;
+}
+.registry-petCard__petName label{
+	margin-bottom: 15px;
+	margin-left: 30%; 
+}
+.registry-petCard__petName input{
+	box-sizing: border-box;
+	padding: 0 10px;
+	width: 100%;
+
+	font-size: 17px;
+	
+	border:  none;
+	min-width: 220px;
+	height: 36px;
+	border: 1px solid #FFAE40;
+	outline: none;
+	color: inherit;
+	background-color: transparent;
+	transition: .3s;
+}
+
+.registry-petCard__petName input:focus,
+.registry-petCard__petName input:active{
+	border: 1px solid black;
+}
+
+.registry-petCard input{
+	margin: 0 10px; 
+	float: unset;
+}
+
+.searchForm,
+.additionForm{
+	
+	width: 700px;
+}
+
+.searchForm__buttons{
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+	width: 150px;
+	color: #fff;
+	user-select: none;
+}
+
+.searchForm__buttons__button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 90px;
+	height: 45px;
+	background-color: rgb(20,25,20);
+
+	/*border-top: 2px solid #f23;
+	border-left: 1px solid #f23;*/
+	border-radius: 2px;
+	
+}
+.searchForm__buttons__button:hover{
+	/*background-color: #f12;*/
+}
+.section__petSearch,
+.section__petAddition{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	
+	padding: 10px;
+
+}

@@ -1,0 +1,42 @@
+p{
+	padding: 0;
+	margin: 0;
+}
+.wrapper{
+
+	padding: 20px;
+}
+
+form{
+	width: 100%;
+}
+.form-row{
+	padding-bottom: 20px;
+	min-width: 540px;
+	max-width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.form-row p{
+
+	
+
+	margin-left: 20px;
+	color: #9ea4ac;
+}
+
+select{
+	border: 2px solid #d0d0d0;
+	border-radius: 2px;
+	height: 36px;
+	max-width: 320px;
+	min-width: 300px;
+	font-size: 17px;
+}
+
+option{
+
+}
+

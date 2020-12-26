@@ -1,0 +1,65 @@
+{% extends "./base.html" %}
+
+{% block title %}Личный кабинет{% endblock %}
+{% block content %}
+    <h1>Личный кабинет</h1>
+{% if animal_list %}
+	<h1>ЛИСТ ПРИШЕЛ</h1>
+{% else %}
+	<h1>ЛИСТ НЕ ПРИШЕЛ</h1>
+{% endif %}
+<div class="profile-wrapper">
+	<div class="col-left">
+		<div class="user-img">
+					<!-- <img src="https://lh3.googleusercontent.com/_rTjcey2W1em8WMxkimbxt0Law-K3Qq9OqzJehFyPxXGAf2HzTSjbb0EgdQzLtug5L2JpA=s113"> -->
+		</div>
+
+		<div class="user-name">
+			<div class="row name">{{ user_name }}</div>
+			<div class="row surname">{{ user_second_name }}</div>
+		</div>
+
+		<div class="profile-button"><a href="{% url 'account:edit' %}">Редактировать профиль</a></div>
+		<div class="profile-button"><a href="{% url 'account:password_change' %}">Изменить пароль</a></div>
+		<div class="profile-button accentuated"><a href="{% url 'account:add_animal' %}">Добавить питомца</a></div>
+		<div class="profile-button accentuated"><a href="{% url 'account:add_shelter' %}">Добавить приют</a></div>
+		<div class="profile-button accentuated"><a href="{% url 'account:edit_shelter' %}">Редактировать данные приюта</a></div>
+	</div>
+
+	<div class="col-right">
+		{% if shelter_list %}
+		{% for shelter in shelter_list %}
+		<div class="user-info">
+			<div class="user-mail">Email: {{ shelter.email }}</div>
+			<div class="user-mail">Телефон: {{ shelter.phone }}</div>
+			<div class="shelter-address">Электронная почты: {{ shelter.address }}</div>
+		</div>
+		{% endfor %}
+		{% endif %}
+		<div class="section__ourPets">
+			<!-- <h2>Наши питомцы</h2> -->
+			<div class="section__ourPets__petcards__wrapper">
+				{% if animal_list %}
+				{% for animal in animal_list %}
+				<div class="petcards__item">
+					<div class="petcards__item__img"></div>
+					<div class="petcards__item__description">
+						{% if animal.animal_name == None  %}
+						<h2>Прикол</h2>
+						{% else %}
+						<h2>{{ animal.animal_name }}</h2>
+						{% endif %}
+						<p>{{ animal.animal_gender }}</p>
+						<p>{{ animal.animal_color }}</p>
+						<p>{{ animal.animal_age }}</p>
+						<p>{{ animal.animal_size }}</p>
+					</div>
+					<div class="petcards__item__likeButton"></div>
+				</div>
+				{% endfor %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

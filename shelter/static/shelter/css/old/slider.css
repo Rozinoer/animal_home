@@ -1,0 +1,41 @@
+.overlay__slider{
+	position: relative;
+	min-width: 0;
+
+}
+
+.overlay__slider .slick-track{
+	display: flex;
+
+}
+
+.overlay__slider .slick-list{
+	overflow: hidden;
+}
+
+.overlay__slider .slick-arrow{
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+}
+
+.overlay__slider .slick-arrow.slick-prev{
+	left: 0;
+}
+
+.overlay__slider .slick-arrow.slick-next{
+	right: 0
+}
+
+.overlay__slider .slick-dots{
+	position: absolute;
+	bottom: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: red;
+}
+
+.overlay__slider .slick-dots li{
+	list-style: none;
+}
